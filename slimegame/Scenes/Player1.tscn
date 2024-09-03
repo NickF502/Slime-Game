@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cynb7l8exblm5"]
+
+[ext_resource type="Script" path="res://scripts/PlayerMovement.cs" id="1_7px0a"]
+[ext_resource type="Texture2D" uid="uid://bcwl2mfkc5lgb" path="res://assets/Sprites/Characters/NoodleSprites/Noodle_SpriteSheet.png" id="1_66fvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2svmm"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(256, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3djp8"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(288, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owjcq"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(320, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u02i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2svmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3djp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owjcq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_waapj"]
+radius = 9.21954
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_7px0a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3u02i")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(0.711925, 0.622792)
+shape = SubResource("CircleShape2D_waapj")
