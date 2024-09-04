@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cynb7l8exblm5"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_7px0a"]
+[ext_resource type="Texture2D" uid="uid://bcwl2mfkc5lgb" path="res://Assets/sprites/characters/NoodleSprites/Noodle_SpriteSheet.png" id="1_66fvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2svmm"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(256, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3djp8"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(288, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owjcq"]
+atlas = ExtResource("1_66fvf")
+region = Rect2(320, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u02i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2svmm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3djp8")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_owjcq")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3djp8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.5
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jqd4"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yo211"]
+radius = 7.0
+
+[node name="Noodle" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_7px0a")
+Speed = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3u02i")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Hitbox Collider" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_1jqd4")
+
+[node name="Body Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yo211")

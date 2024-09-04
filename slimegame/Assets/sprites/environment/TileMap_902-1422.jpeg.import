@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwl2mfkc5lgb"
-path="res://.godot/imported/Noodle_SpriteSheet.png-a6005cb003a8e5956c9210a938874df8.ctex"
+uid="uid://tjdtfgn6d4b6"
+path="res://.godot/imported/TileMap_902-1422.jpeg-4067632f14773633e07aacf74212eafa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/characters/NoodleSprites/Noodle_SpriteSheet.png"
-dest_files=["res://.godot/imported/Noodle_SpriteSheet.png-a6005cb003a8e5956c9210a938874df8.ctex"]
+source_file="res://Assets/sprites/environment/TileMap_902-1422.jpeg"
+dest_files=["res://.godot/imported/TileMap_902-1422.jpeg-4067632f14773633e07aacf74212eafa.ctex"]
 
 [params]
 
